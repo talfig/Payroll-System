@@ -54,10 +54,12 @@ public class HourlyEmployee extends Employee {
     @Override
     public double earnings() {
         if (getHours() <= 40) { // no overtime
-            return getWage() * getHours();
+            return getWage() * getHours() +
+                (super.hasBirthdayThisMonth() ? 200.0 : 0.0);
         }
         else {
-            return 40 * getWage() + (getHours() - 40) * getWage() * 1.5;
+            return 40 * getWage() + (getHours() - 40) * getWage() * 1.5 +
+                (super.hasBirthdayThisMonth() ? 200.0 : 0.0);
         }
     }
 

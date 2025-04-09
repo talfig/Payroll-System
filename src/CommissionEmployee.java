@@ -52,7 +52,8 @@ public class CommissionEmployee extends Employee {
     // calculate earnings: override abstract method earnings in Employee
     @Override
     public double earnings() {
-        return getCommissionRate() * getGrossSales();
+        return getCommissionRate() * getGrossSales()
+            + (super.hasBirthdayThisMonth() ? 200.0 : 0.0);
     }
 
     // return String representation of CommissionEmployee object

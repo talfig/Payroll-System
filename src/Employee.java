@@ -1,6 +1,8 @@
 // Fig. 10.4: Employee.java
 // Employee abstract superclass.
 
+import java.util.Calendar;
+
 public abstract class Employee {
     private final String firstName;
     private final String lastName;
@@ -39,4 +41,17 @@ public abstract class Employee {
 
     // abstract class must be overridden by concrete subclass
     public abstract double earnings(); // no implementation here
+
+    // check if the employee has birthday this month
+    protected boolean hasBirthdayThisMonth() {
+        Calendar cal = Calendar.getInstance();
+        int currentMonth = cal.get(Calendar.MONTH) + 1; // Calendar months are 0-based
+
+        if (currentMonth == birthday.getMonth()) {
+            System.out.printf("Happy Birthday! You received an extra $200 for this month%n");
+            return true;
+        };
+
+        return false;
+    }
 }

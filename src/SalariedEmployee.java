@@ -32,7 +32,9 @@ public class SalariedEmployee extends Employee {
 
     // calculate earnings: override abstract method earnings in Employee
     @Override
-    public double earnings() {return getWeeklySalary();}
+    public double earnings() {
+        return getWeeklySalary() + (super.hasBirthdayThisMonth() ? 50.0 : 0.0);
+    }
 
     // return String representation of SalariedEmployee object
     @Override
