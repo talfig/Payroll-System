@@ -52,12 +52,6 @@ public class Birthday {
         this.year = year;
     }
 
-    // set the day of birth
-    public void setDay(int day) {
-        isValidDay(day, this.month); // validate day
-        this.day = day;
-    }
-
     // return the day of birth
     public int getDay() {return day;}
 
