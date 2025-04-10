@@ -6,12 +6,36 @@ public class Birthday {
     private int month;
     private int year;
 
+    // Checks if the given day is valid
+    private void isValidDay(int day, int month) {
+        switch (month) {
+            case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+                if (day < 1 || day > 31) {
+                    throw new IllegalArgumentException(
+                            "Day of birth must be between 1 and 31 for the given month: " + month);
+                }
+                break;
+            case 4: case 6: case 9: case 11:
+                if (day < 1 || day > 30) {
+                    throw new IllegalArgumentException(
+                            "Day of birth must be between 1 and 30 for the given month: " + month);
+                }
+                break;
+            case 2:
+                if (day < 1 || day > 28) {
+                    throw new IllegalArgumentException(
+                            "Day of birth must be between 1 and 28 for the given month: " + month);
+                }
+                break;
+            default:
+                throw new IllegalArgumentException(
+                        "Day of birth must be >= 1 and <= 31");
+        }
+    }
+
     // constructor
     public Birthday(int day, int month, int year) {
-        if (day < 1 || day > 31) { // validate day
-            throw new IllegalArgumentException(
-                "Day of birth must be >= 1 and <= 31");
-        }
+        isValidDay(day, month); // validate day
 
         if (month < 1 || month > 12) { // validate month
             throw new IllegalArgumentException(
@@ -29,12 +53,8 @@ public class Birthday {
     }
 
     // set the day of birth
-    public void getDay(int day) {
-        if (day < 1 || day > 31) { // validate day
-            throw new IllegalArgumentException(
-                "Day of birth must be >= 1 and <= 31");
-        }
-
+    public void setDay(int day) {
+        isValidDay(day, month); // validate day
         this.day = day;
     }
 
