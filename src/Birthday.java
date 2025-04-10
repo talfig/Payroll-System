@@ -61,28 +61,8 @@ public class Birthday {
     // return the day of birth
     public int getDay() {return day;}
 
-    // set the month of birth
-    public void setMonth(int month) {
-        if (month < 1 || month > 12) { // validate month
-            throw new IllegalArgumentException(
-                "Month of birth must be >= 1 and <= 12");
-        }
-
-        this.month = month;
-    }
-
     // return the month of birth
     public int getMonth() {return month;}
-
-    // set the year of birth
-    public void setYear(int year) {
-        if (year < 0 || year > 2025) { // validate year
-            throw new IllegalArgumentException(
-                "Hours worked must be >= 0 and <= 2025");
-        }
-
-        this.year = year;
-    }
 
     // return the year of birth
     public int getYear() {return year;}
