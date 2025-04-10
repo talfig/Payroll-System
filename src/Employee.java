@@ -48,7 +48,7 @@ public abstract class Employee {
         int currentMonth = cal.get(Calendar.MONTH) + 1; // Calendar months are 0-based
 
         if (currentMonth == birthday.getMonth()) {
-            System.out.printf("Happy Birthday! You received an extra $200 for this month%n");
+            System.out.println("Happy Birthday! You received an extra $200 for this month");
             return true;
         };
 
