@@ -50,7 +50,7 @@ public abstract class Employee {
         if (currentMonth == birthday.getMonth()) {
             System.out.println("Happy Birthday! You received an extra $200 for this month");
             return true;
-        };
+        }
 
         return false;
     }
