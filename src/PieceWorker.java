@@ -24,6 +24,7 @@ public class PieceWorker extends Employee {
         this.quantity = quantity;
         this.cost = cost;
     }
+
     // set quantity of pieces
     public void setQuantity(int quantity) {
         if (quantity < 0) { // validate quantity
