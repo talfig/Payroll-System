@@ -6,22 +6,28 @@ public class Birthday {
     private int month;
     private int year;
 
+    // constants for the months
+    private static final int
+        JANUARY = 1, FEBRUARY = 2, MARCH = 3, APRIL = 4,
+        MAY = 5, JUNE = 6, JULY = 7, AUGUST = 8,
+        SEPTEMBER = 9, OCTOBER = 10, NOVEMBER = 11, DECEMBER = 12;
+
     // Checks if the given day is valid
     private void isValidDay(int day, int month) {
         switch (month) {
-            case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+            case JANUARY: case MARCH: case MAY: case JULY: case AUGUST: case OCTOBER: case DECEMBER:
                 if (day < 1 || day > 31) {
                     throw new IllegalArgumentException(
                             "Day of birth must be between 1 and 31 for the given month: " + month);
                 }
                 break;
-            case 4: case 6: case 9: case 11:
+            case APRIL: case JUNE: case SEPTEMBER: case NOVEMBER:
                 if (day < 1 || day > 30) {
                     throw new IllegalArgumentException(
                             "Day of birth must be between 1 and 30 for the given month: " + month);
                 }
                 break;
-            case 2:
+            case FEBRUARY:
                 if (day < 1 || day > 28) {
                     throw new IllegalArgumentException(
                             "Day of birth must be between 1 and 28 for the given month: " + month);
@@ -61,6 +67,7 @@ public class Birthday {
     // return the year of birth
     public int getYear() {return year;}
 
+    // return String representation of Birthday object
     @Override
     public String toString() {
         return String.format("%02d/%02d/%d",
