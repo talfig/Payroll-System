@@ -2,9 +2,9 @@
 // Birthday class.
 
 public class Birthday {
-    private int day;
-    private int month;
-    private int year;
+    private final int day;
+    private final int month;
+    private final int year;
 
     // constants for the months
     private static final int
