@@ -18,7 +18,7 @@ public class PayrollSystemTest {
                 new Birthday(4, 4, 2004), 5000, .04, 300);
         PieceWorker pieceWorker =
                 new PieceWorker("George", "Miller", "555-55-5555",
-                    new Birthday(5, 5, 2005), 500, 10);
+                    new Birthday(5, 5, 2005), 50, 10);
 
         System.out.println("Employees processed individually:");
 
