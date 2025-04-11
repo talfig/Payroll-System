@@ -9,7 +9,7 @@ public class SalariedEmployee extends Employee {
         String socialSecurityNumber, Birthday birthday, double weeklySalary) {
         super(firstName, lastName, socialSecurityNumber, birthday);
 
-        if (weeklySalary < 0.0) {
+        if (weeklySalary < 0.0) { // validate
             throw new IllegalArgumentException(
                 "Weekly salary must be >= 0.0");
         }
@@ -19,7 +19,7 @@ public class SalariedEmployee extends Employee {
 
     // set salary
     public void setWeeklySalary(double weeklySalary) {
-        if (weeklySalary < 0.0) {
+        if (weeklySalary < 0.0) { // validate
             throw new IllegalArgumentException(
                 "Weekly salary must be >= 0.0");
         }

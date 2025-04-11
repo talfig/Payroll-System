@@ -16,19 +16,19 @@ public class Birthday {
     private void isValidDay(int day, int month) {
         switch (month) {
             case JANUARY: case MARCH: case MAY: case JULY: case AUGUST: case OCTOBER: case DECEMBER:
-                if (day < 1 || day > 31) {
+                if (day < 1 || day > 31) { // validate
                     throw new IllegalArgumentException(
                             "Day of birth must be between 1 and 31 for the given month: " + month);
                 }
                 break;
             case APRIL: case JUNE: case SEPTEMBER: case NOVEMBER:
-                if (day < 1 || day > 30) {
+                if (day < 1 || day > 30) { // validate
                     throw new IllegalArgumentException(
                             "Day of birth must be between 1 and 30 for the given month: " + month);
                 }
                 break;
             case FEBRUARY:
-                if (day < 1 || day > 28) {
+                if (day < 1 || day > 28) { // validate
                     throw new IllegalArgumentException(
                             "Day of birth must be between 1 and 28 for the given month: " + month);
                 }
